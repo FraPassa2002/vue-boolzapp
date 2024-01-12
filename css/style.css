@@ -1,0 +1,199 @@
+/*
+    RESET
+*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+    MAIN
+*/
+  
+#chat-container {
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    font-size: 16px;
+    background-color: lightcoral
+}
+
+#app {
+    display: flex;
+    overflow: hidden;
+    width: 90%;
+    height: 90%;
+    margin: auto;
+    background-color: #ffffff;
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.4);
+}
+
+#app > aside {
+    width: calc(100% / 3);
+    min-width: 350px;
+    height: 100%;
+    border-right: 1px solid #e3e3e3;
+    background-color: rebeccapurple;
+}
+
+#app > section {
+    flex-grow: 1;
+    position: relative;
+    height: 100%;
+    background-color: darkred;
+}
+
+header {
+    width: 100%;
+    height: 70px;
+    border: 2px yellowgreen dashed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header > * {
+    width: 50%;
+    height: 100%;
+    border: 2px yellowgreen dashed;
+    display: flex;
+    align-items: center;
+}
+
+.header-options {
+    justify-content: end;
+}
+
+.img-profile {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: aqua;
+    margin-left: 10px;
+}
+
+.info-profile {
+    margin-left: 15px;
+}
+
+.icon-options {
+    margin-right: 20px;
+}
+
+/* 
+    ASIDE
+*/
+
+aside > .pop-up-notifiche {
+    width: 100%;
+    height: 70px;
+    border: 2px yellowgreen dashed;
+    display: flex;
+    align-items: center;
+}
+
+.search-contact {
+    width: 100%;
+    height: 50px;
+    border: 2px yellowgreen dashed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-contact > .button-search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px yellowgreen dashed;
+}
+
+.search-contact > .nav-bar > input {
+    height: 100%;
+    width: 100%;
+    padding-left: 10px;
+    border: none;
+}
+
+
+aside > main {
+    width: 100%;
+    height: calc(100% - 190px);
+    border: 2px yellowgreen dashed;
+    overflow-y: auto;
+}
+
+aside > .search-contact > .button-search {
+    width: 20%;
+    height: 70%;
+    border: 2px yellowgreen dashed;
+}
+
+aside > .search-contact > .nav-bar {
+    width: 70%;
+    height: 70%;
+    border: 2px yellowgreen dashed;
+}
+
+aside > main > .aside-contact {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 2px yellowgreen dashed;
+}
+
+aside > main > .aside-contact > .contact {
+    display: flex;
+    align-items: center;
+}
+
+aside > main > .aside-contact > .time {
+    display: flex;
+    align-items: start;
+    justify-content: end;
+    height: 100%;
+    border: 2px lightblue dashed;
+}
+
+
+/* 
+    SECTION
+*/
+
+section > main {
+    width: 100%;
+    height: calc(100% - 130px);
+    border: 2px yellowgreen dashed;
+    overflow-y: auto;
+    padding: 10px 30px;
+    
+}
+
+section > footer {
+    width: 100%;
+    height: 60px;
+    border: 2px yellowgreen dashed;
+    display: flex;
+    align-items: center;
+}
+
+section > footer > .emoji, .mic {
+    width: 100px;
+    height: 90%;
+    border: 2px yellowgreen dashed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section > footer > .text-bar {
+    height: 90%;
+    border: 2px yellowgreen dashed;
+    flex-grow: 1;
+}
+
