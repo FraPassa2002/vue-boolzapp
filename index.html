@@ -7,6 +7,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>V U E</title>
 
+        <!-- Font-awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fredoka&family=Signika&display=swap" rel="stylesheet">
+
         <!-- CSS -->
         <link rel="stylesheet" href="css/style.css" />
     </head>
@@ -19,35 +27,45 @@
                 <aside>
                     <header>
                         <section class="header-profile">
-                            <div class="img-profile"></div>
+                            <div class="img-profile">
+                                <img src="./img/avatar_7.jpg" alt="">
+                            </div>
                             <div class="info-profile">
-                                <div>pippo</div>
+                                <div class="name-profile">Francesco</div>
                             </div>
                         </section>
 
                         <section class="header-options">
-                            <div class="icon-options">x</div>
-                            <div class="icon-options">x</div>
-                            <div class="icon-options">x</div>
+                            <div class="icon-options">
+                                <i class="fa-solid fa-circle-notch fa-lg"></i>
+                            </div>
+                            <div class="icon-options">
+                                <i class="fa-solid fa-message fa-lg"></i>
+                            </div>
+                            <div class="icon-options">
+                                <i class="fa-solid fa-ellipsis-vertical fa-lg"></i>
+                            </div>
                         </section>
                     </header>
 
                     <section class="pop-up-notifiche">
-                        <div class="img-profile"></div>
+                        <div class="img-profile">
+                            <i class="fa-solid fa-bell-slash fa-lg"></i>
+                        </div>
                         <div class="info-profile">
                             <div class="name-profile">
                                 Ricevi notifiche di nuovi messaggi
                             </div>
-                            <div class="subtitle-profile">
+                            <div class="subtitle">
                                 Attiva notifiche desktop
                             </div>
                         </div>
                     </section>
 
                     <section class="search-contact">
-                        <div class="button-search">
-                            x
-                        </div>
+                        <button class="button-search">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
                         <div class="nav-bar">
                             <input type="text" placeholder="Cerca o inizia una nuova chat">
                         </div>
@@ -56,19 +74,21 @@
                     <main>
                         <div class="aside-contact">
                             <div class="contact">
-                                <div class="img-profile"></div>
+                                <div class="img-profile">
+                                    <img src="./img/avatar_1.jpg" alt="">
+                                </div>
                                 <div class="info-profile">
                                     <div class="name-profile">
                                         Michele
                                     </div>
-                                    <div class="subtitle-profile">
+                                    <div class="subtitle">
                                         Ultimo messaggio inviato
                                     </div>
                                 </div>
                             </div>
 
                             <div class="time">
-                               <div>
+                               <div class="subtitle">
                                     13:00
                                </div>
                             </div>
@@ -79,30 +99,65 @@
                 <section>
                     <header>
                         <section class="header-profile">
-                            <div class="img-profile"></div>
+                            <div class="img-profile">
+                                <img src="./img/avatar_1.jpg" alt="">
+                            </div>
                             <div class="info-profile">
                                 <div class="name-profile">
                                     Michele
                                 </div>
-                                <div class="subtitle-profile">
+                                <div class="subtitle">
                                     Ultimo accesso oggi alle 13:00
                                 </div>
                             </div>
                         </section>
 
                         <section class="header-options">
-                            <div class="icon-options">x</div>
-                            <div class="icon-options">x</div>
-                            <div class="icon-options">x</div>
+                            <div class="icon-options">
+                                <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+                            </div>
+                            <div class="icon-options"><i class="fa-solid fa-paperclip fa-lg"></i></div>
+                            <div class="icon-options">
+                                <i class="fa-solid fa-ellipsis-vertical fa-lg"></i>
+                            </div>
                         </section>
                     </header>
 
-                    <main></main>
+                    <main>
+                        <div class="message-container sent">
+                            <div class="message">
+                                <div class="text-message">
+                                    Come stai?
+                                </div>
+
+                                <div class="time-message subtitle">
+                                    13:00
+                                </div>
+                            </div>
+                        </div>
+                        <div class="message-container received">
+                            <div class="message">
+                                <div class="text-message">
+                                    Tutto bene &#10084;&#65039;
+                                </div>
+
+                                <div class="time-message subtitle">
+                                    13:00
+                                </div>
+                            </div>
+                        </div>
+                    </main>
 
                     <footer>
-                        <div class="emoji">x</div>
-                        <div class="text-bar"></div>
-                        <div class="mic">x</div>
+                        <div class="emoji">
+                            <i class="fa-regular fa-face-tired fa-lg"></i>
+                        </div>
+                        <div class="text-bar">
+                            <input type="text" placeholder="Scrivi un messaggio">
+                        </div>
+                        <div class="mic">
+                            <i class="fa-solid fa-microphone fa-lg"></i>
+                        </div>
                     </footer>
                 </section>
 

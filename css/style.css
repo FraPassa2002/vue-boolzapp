@@ -18,7 +18,10 @@
     height: 100vh;
     width: 100vw;
     font-size: 16px;
-    background-color: lightcoral
+    background: -moz-linear-gradient(top, #2cbda5 0%, #2cbda5 22%, #dddbd1 22%, #dddbd1 22%, #dddbd1 100%);
+    background: -webkit-linear-gradient(top, #2cbda5 0%, #2cbda5 22%, #dddbd1 22%, #dddbd1 22%, #dddbd1 100%);
+    background: linear-gradient(to bottom, #2cbda5 0%, #2cbda5 22%, #dddbd1 22%, #dddbd1 22%, #dddbd1 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#2cbda5', endColorstr='#dddbd1', GradientType=0);
 }
 
 #app {
@@ -36,29 +39,29 @@
     min-width: 350px;
     height: 100%;
     border-right: 1px solid #e3e3e3;
-    background-color: rebeccapurple;
 }
 
 #app > section {
     flex-grow: 1;
     position: relative;
     height: 100%;
-    background-color: darkred;
+
 }
 
 header {
     width: 100%;
     height: 70px;
-    border: 2px yellowgreen dashed;
+    /* border: 2px yellowgreen dashed; */
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #ededed;
 }
 
 header > * {
     width: 50%;
     height: 100%;
-    border: 2px yellowgreen dashed;
+    /* border: 2px yellowgreen dashed; */
     display: flex;
     align-items: center;
 }
@@ -71,8 +74,16 @@ header > * {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: aqua;
+    background-color: white;
     margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-profile > img {
+    width: 100%;
+    border-radius: 50%;
 }
 
 .info-profile {
@@ -83,6 +94,26 @@ header > * {
     margin-right: 20px;
 }
 
+.name-profile {
+    font-weight: bold;
+}
+
+.subtitle {
+    font-size: smaller;
+    color: gray;
+}
+
+input {
+    height: 100%;
+    width: 100%;
+    padding-left: 10px;
+    border: none;
+    font-size: 14px;
+    color: #b4b8ba;
+    border-radius: 3px;
+}
+
+
 /* 
     ASIDE
 */
@@ -90,15 +121,20 @@ header > * {
 aside > .pop-up-notifiche {
     width: 100%;
     height: 70px;
-    border: 2px yellowgreen dashed;
+    /* border: 2px yellowgreen dashed; */
     display: flex;
     align-items: center;
+    background-color: #8EDAFC;
+}
+
+aside > .pop-up-notifiche > .img-profile > * {
+    color: #8EDAFC;
 }
 
 .search-contact {
     width: 100%;
     height: 50px;
-    border: 2px yellowgreen dashed;
+    /* border: 2px yellowgreen dashed; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -108,34 +144,26 @@ aside > .pop-up-notifiche {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px yellowgreen dashed;
-}
-
-.search-contact > .nav-bar > input {
-    height: 100%;
-    width: 100%;
-    padding-left: 10px;
-    border: none;
-}
-
-
-aside > main {
-    width: 100%;
-    height: calc(100% - 190px);
-    border: 2px yellowgreen dashed;
-    overflow-y: auto;
+    /* border: 2px yellowgreen dashed; */
 }
 
 aside > .search-contact > .button-search {
     width: 20%;
     height: 70%;
-    border: 2px yellowgreen dashed;
+    /* border: 2px yellowgreen dashed; */
 }
 
 aside > .search-contact > .nav-bar {
     width: 70%;
     height: 70%;
-    border: 2px yellowgreen dashed;
+    /* border: 2px yellowgreen dashed; */
+}
+
+aside > main {
+    width: 100%;
+    height: calc(100% - 190px);
+    /* border: 2px yellowgreen dashed; */
+    overflow-y: auto;
 }
 
 aside > main > .aside-contact {
@@ -144,7 +172,8 @@ aside > main > .aside-contact {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border: 2px yellowgreen dashed;
+    /* border: 2px yellowgreen dashed; */
+    border-top: 2px lightgray solid;
 }
 
 aside > main > .aside-contact > .contact {
@@ -157,7 +186,9 @@ aside > main > .aside-contact > .time {
     align-items: start;
     justify-content: end;
     height: 100%;
-    border: 2px lightblue dashed;
+    padding-top: 3px;
+    padding-right: 3px;
+    /* border: 2px lightblue dashed; */
 }
 
 
@@ -168,16 +199,53 @@ aside > main > .aside-contact > .time {
 section > main {
     width: 100%;
     height: calc(100% - 130px);
-    border: 2px yellowgreen dashed;
+    /* border: 2px yellowgreen dashed; */
     overflow-y: auto;
     padding: 10px 30px;
+    background-image: url(../img/mine.jpg);
     
 }
+
+section > main > .message-container {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+section > main > .message-container.sent {
+    justify-content: flex-end;
+}
+
+section > main > .message-container > .message {
+    border-radius: 10px;
+    max-width: 40%;
+    min-width: 220px
+}
+
+section > main > .message-container.sent > .message {
+background-color: #D5F9BA;
+}
+
+section > main > .message-container.received > .message {
+background-color:whitesmoke;
+}
+
+section > main > .message-container > .message > .text-message {
+    padding: 15px 80px 5px 15px;
+}
+
+section > main > .message-container > .message > .time-message {
+    display: flex;
+    justify-content: end;
+    padding-bottom: 2px;
+    padding-right: 5px;
+}
+
+
 
 section > footer {
     width: 100%;
     height: 60px;
-    border: 2px yellowgreen dashed;
+    /* border: 2px yellowgreen dashed; */
     display: flex;
     align-items: center;
 }
@@ -185,7 +253,7 @@ section > footer {
 section > footer > .emoji, .mic {
     width: 100px;
     height: 90%;
-    border: 2px yellowgreen dashed;
+    /* border: 2px yellowgreen dashed; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -193,7 +261,9 @@ section > footer > .emoji, .mic {
 
 section > footer > .text-bar {
     height: 90%;
-    border: 2px yellowgreen dashed;
+    /* border: 2px yellowgreen dashed; */
     flex-grow: 1;
 }
+
+
 
