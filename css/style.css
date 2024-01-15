@@ -103,13 +103,17 @@ header > * {
     color: gray;
 }
 
+.underline {
+    text-decoration: underline;
+}
+
 input {
     height: 100%;
     width: 100%;
     padding-left: 10px;
     border: none;
     font-size: 14px;
-    color: #b4b8ba;
+    color: gray;
     border-radius: 3px;
 }
 
@@ -173,10 +177,14 @@ aside > main > .aside-contact {
     align-items: center;
     justify-content: space-between;
     /* border: 2px yellowgreen dashed; */
-    border-top: 2px lightgray solid;
+    border-top: 2px #E9EBEB solid;
 }
 
-aside > main > .aside-contact > .contact {
+aside > main > .aside-contact:hover,.aside-contact.active {
+    background-color: #E9EBEB;
+}
+
+aside > main > .aside-contact > .contact-data {
     display: flex;
     align-items: center;
 }
@@ -248,6 +256,7 @@ section > footer {
     /* border: 2px yellowgreen dashed; */
     display: flex;
     align-items: center;
+    background-color: #ededed;  
 }
 
 section > footer > .emoji, .mic {
@@ -260,9 +269,13 @@ section > footer > .emoji, .mic {
 }
 
 section > footer > .text-bar {
-    height: 90%;
+    height: 70%;
     /* border: 2px yellowgreen dashed; */
     flex-grow: 1;
+}
+
+section > footer > .text-bar > * {
+    border-radius: 20px;
 }
 
 

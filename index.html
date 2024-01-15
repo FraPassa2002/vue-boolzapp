@@ -56,7 +56,7 @@
                             <div class="name-profile">
                                 Ricevi notifiche di nuovi messaggi
                             </div>
-                            <div class="subtitle">
+                            <div class="subtitle underline">
                                 Attiva notifiche desktop
                             </div>
                         </div>
@@ -67,19 +67,19 @@
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </button>
                         <div class="nav-bar">
-                            <input type="text" placeholder="Cerca o inizia una nuova chat">
+                            <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="searchedUser" @keyup="searchContact()">
                         </div>
                     </section>
 
                     <main>
-                        <div class="aside-contact">
-                            <div class="contact">
+                        <div  v-for="(contact, i) in contacts" class="aside-contact" :class="i == activeContact ? 'active' : '' "  @click="changeActiveContact(i)" v-if="contact.visible">
+                            <div class="contact-data">
                                 <div class="img-profile">
-                                    <img src="./img/avatar_1.jpg" alt="">
+                                    <img :src="contact.avatar" :alt="contact.name">
                                 </div>
                                 <div class="info-profile">
                                     <div class="name-profile">
-                                        Michele
+                                        {{ contact.name }}
                                     </div>
                                     <div class="subtitle">
                                         Ultimo messaggio inviato
@@ -100,11 +100,11 @@
                     <header>
                         <section class="header-profile">
                             <div class="img-profile">
-                                <img src="./img/avatar_1.jpg" alt="">
+                                <img :src="contacts[activeContact].avatar" :alt="contacts[activeContact].name">
                             </div>
                             <div class="info-profile">
                                 <div class="name-profile">
-                                    Michele
+                                    {{ contacts[activeContact].name }}
                                 </div>
                                 <div class="subtitle">
                                     Ultimo accesso oggi alle 13:00
@@ -124,25 +124,14 @@
                     </header>
 
                     <main>
-                        <div class="message-container sent">
+                        <div v-for="(singleMessage, i) in contacts[activeContact].messages" class="message-container" :class="singleMessage.status == 'sent' ? 'sent' : 'received'">
                             <div class="message">
                                 <div class="text-message">
-                                    Come stai?
+                                    {{ singleMessage.message }}
                                 </div>
 
                                 <div class="time-message subtitle">
-                                    13:00
-                                </div>
-                            </div>
-                        </div>
-                        <div class="message-container received">
-                            <div class="message">
-                                <div class="text-message">
-                                    Tutto bene &#10084;&#65039;
-                                </div>
-
-                                <div class="time-message subtitle">
-                                    13:00
+                                    {{ singleMessage.date }} 
                                 </div>
                             </div>
                         </div>
@@ -153,7 +142,7 @@
                             <i class="fa-regular fa-face-tired fa-lg"></i>
                         </div>
                         <div class="text-bar">
-                            <input type="text" placeholder="Scrivi un messaggio">
+                            <input type="text" @keyup.enter="addNewMessage()" v-model="newMessage" placeholder="Scrivi un messaggio">
                         </div>
                         <div class="mic">
                             <i class="fa-solid fa-microphone fa-lg"></i>
