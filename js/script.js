@@ -5,7 +5,7 @@ const { createApp } = Vue;
 createApp ({
     data() {
         return {
-            searchedUser: '',
+             searchedUser: '',
             activeContact: 0,
             newMessage: '',
             contacts: [
@@ -232,6 +232,7 @@ createApp ({
 
             return finalString;
         },
+        /*
         searchContact() {
             this.contacts.forEach((contact) => {
                 if (
@@ -246,6 +247,7 @@ createApp ({
             });
             console.log(searchedUser);
         },
+        */
     }
     // Monto l'istanza di Vue in pagina
 }).mount('#app');

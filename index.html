@@ -72,7 +72,7 @@
                     </section>
 
                     <main>
-                        <div  v-for="(contact, i) in contacts" class="aside-contact" :class="i == activeContact ? 'active' : '' "  @click="changeActiveContact(i)" v-if="contact.visible">
+                        <div  v-for="(contact, i) in contacts" class="aside-contact" :class="i == activeContact ? 'active' : '' "  @click="changeActiveContact(i)">
                             <div class="contact-data">
                                 <div class="img-profile">
                                     <img :src="contact.avatar" :alt="contact.name">
