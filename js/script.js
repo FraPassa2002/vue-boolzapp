@@ -5,9 +5,9 @@ const { createApp } = Vue;
 createApp ({
     data() {
         return {
-             searchedUser: '',
             activeContact: 0,
             newMessage: '',
+            searchQuery: '',
             contacts: [
                 {
                     name: 'Michele',
@@ -177,9 +177,8 @@ createApp ({
     },
     methods: {
         changeActiveContact(index) {
-            console.log('PRIMA', this.activeContact);
             this.activeContact = index;
-            console.log('DOPO', this.activeContact);
+            console.log('Chat', this.activeContact);
         },
         addNewMessage() {
             if (this.newMessage.length > 0) {
@@ -232,23 +231,18 @@ createApp ({
 
             return finalString;
         },
-        /*
-        searchContact() {
-            this.contacts.forEach((contact) => {
-                if (
-                   contact.name
-                      .toLowerCase()
-                      .includes(this.searchedUser.toLowerCase())
-                ) {
-                   contact.visible = true;
-                } else {
-                   contact.visible = false;
-                }
-            });
-            console.log(searchedUser);
+    },
+
+    computed: {
+        filteredContacts() {
+            return this.contacts.filter(contact => contact.name.toLowerCase().includes(this.searchQuery.toLowerCase()));
+            console.log(searchQuery);
+
         },
-        */
+        
     }
+    
+
     // Monto l'istanza di Vue in pagina
 }).mount('#app');
 

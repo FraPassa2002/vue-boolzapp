@@ -67,12 +67,12 @@
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </button>
                         <div class="nav-bar">
-                            <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="searchedUser" @keyup="searchContact()">
+                            <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="searchQuery">
                         </div>
                     </section>
 
                     <main>
-                        <div  v-for="(contact, i) in contacts" class="aside-contact" :class="i == activeContact ? 'active' : '' "  @click="changeActiveContact(i)">
+                        <div class="aside-contact" :class="i == activeContact ? 'active' : '' "  @click="changeActiveContact(i)" v-for="(contact, i) in filteredContacts" :key="contact.id" >
                             <div class="contact-data">
                                 <div class="img-profile">
                                     <img :src="contact.avatar" :alt="contact.name">
